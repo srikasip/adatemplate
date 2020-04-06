@@ -7,25 +7,24 @@ import Auth from "../User/Auth";
 import * as AUTH from "../../actions/authActions";
 import { connect } from "react-redux";
 import { withAuthentication } from "../Session";
-import { HOME } from "../../constants/routes";
 
 class SignUp extends Component {
   state = {
     username: "",
     password: "",
-    confirm_password: ""
+    confirm_password: "",
   };
 
   successful = () => {
-    this.props.history.push(HOME);
+    this.props.history.push("/");
   };
-  failure = error => {
+  failure = (error) => {
     console.log("Login failed:");
     console.log(error);
     this.setState({ username: "", password: "", confirm_password: "" });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     this.props.signup(
@@ -36,7 +35,7 @@ class SignUp extends Component {
     );
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   };
   render() {

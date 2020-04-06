@@ -8,22 +8,21 @@ import "./signin.css";
 import * as AUTH from "../../actions/authActions";
 import { connect } from "react-redux";
 import { withAuthentication } from "../Session";
-import { HOME } from "../../constants/routes";
 
 class SignIn extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   };
   successful = () => {
-    this.props.history.push(HOME);
+    this.props.history.push("/");
   };
-  failure = error => {
+  failure = (error) => {
     console.log("Login failed:");
     console.log(error);
     this.setState({ username: "", password: "" });
   };
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.login(
       this.state.username,
@@ -33,7 +32,7 @@ class SignIn extends Component {
       this.failure
     );
   };
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   };
   render() {
