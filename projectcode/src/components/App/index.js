@@ -3,9 +3,6 @@ import * as ROUTES from "../../constants/routes";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import Navigation from "../Navigation";
-import SignUp from "../SignUp";
-import SignIn from "../SignIn";
-import PasswordForget from "../PasswordForget";
 
 import { withAuthentication } from "../Session";
 
