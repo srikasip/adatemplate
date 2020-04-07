@@ -1,0 +1,8 @@
+{
+  "authenticated": [
+    { "displayText": "Home", "internalRef": "home", "isDefault": true }
+  ],
+  "non_authenticated": [
+    { "displayText": "Landing", "internalRef": "landing", "isDefault": true }
+  ]
+}
