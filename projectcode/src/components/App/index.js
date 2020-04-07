@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Navigation from "../Navigation";
 
 import { withAuthentication } from "../Session";
-
+// [APP IMPORTS GO HERE]
 class App extends Component {
   isLoggedIn = () => {
     return !!this.props.auth;
@@ -17,7 +17,7 @@ class App extends Component {
         <BrowserRouter>
           <Navigation />
           <div className="container">
-            <Switch></Switch>
+            <Switch>{/* [APP ROUTES GO HERE] */}</Switch>
           </div>
         </BrowserRouter>
       </div>
