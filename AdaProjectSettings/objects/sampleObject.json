@@ -1,4 +1,5 @@
 {
+  "name": "EDIT_shortNameLettersOnlyNoSpaces",
   "keys": {
     "EDIT_key1": {
       "keyVal": "EDIT_ThisIsInCamelCase",
