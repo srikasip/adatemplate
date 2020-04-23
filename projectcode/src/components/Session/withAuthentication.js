@@ -3,31 +3,38 @@ import React from "react";
 import AuthUserContext from "./context";
 import { withFirebase } from "../Firebase";
 
-const withAuthentication = Component => {
+const withAuthentication = (Component) => {
   class WithAuthentication extends React.Component {
+    _isMounted = false;
     constructor(props) {
       super(props);
 
       this.state = {
-        authUser: JSON.parse(localStorage.getItem("authUser"))
+        authUser: JSON.parse(localStorage.getItem("authUser")),
       };
     }
 
     componentDidMount() {
+      this._isMounted = true;
       this.listener = this.props.firebase.onAuthUserListener(
-        authUser => {
+        (authUser) => {
           localStorage.setItem("authUser", JSON.stringify(authUser));
-          this.setState({ authUser });
+          if (this._isMounted) {
+            this.setState({ authUser });
+          }
         },
         () => {
           localStorage.removeItem("authUser");
-          this.setState({ authUser: null });
+          if (this._isMounted) {
+            this.setState({ authUser: null });
+          }
         }
       );
     }
 
     componentWillUnmount() {
       this.listener();
+      this._isMounted = false;
     }
 
     render() {
