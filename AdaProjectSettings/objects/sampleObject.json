@@ -8,12 +8,12 @@
     },
     "EDIT_key2": {
       "keyVal": "EDIT_ThisIsInCamelCase",
-      "display": "EDIT_This is the display text",
+      "displayText": "EDIT_This is the display text",
       "type": "EDIT_canBe_text_number_date_bit_email_password"
     },
     "EDIT_key3": {
       "keyVal": "EDIT_ThisIsInCamelCase",
-      "display": "EDIT_This is the display text",
+      "displayText": "EDIT_This is the display text",
       "type": "EDIT_canBe_text_number_date_bit_email_password"
     }
   },
